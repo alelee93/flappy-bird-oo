@@ -64,6 +64,7 @@ const obstaculos = {
   obstacleContainer: document.querySelector(".obstacles"),
   velocidad: 1,
   gap: 60,
+  maxHeight: 300,
   lista: [],
 
   crearObstaculo() {
@@ -74,8 +75,8 @@ const obstaculos = {
     obstaculos.obstacleContainer.appendChild(topObstacle);
     obstaculos.obstacleContainer.appendChild(bottomObstacle);
 
-    topObstacleHeight = Math.random() * 300;
-    bottomObstacleHeight = topObstacle - obstaculos.gap;
+    topObstacleHeight = Math.random() * obstaculos.maxHeight;
+    bottomObstacleHeight = topObstacleHeight - obstaculos.gap;
     topObstacle.style.height = topObstacleHeight + "px";
     bottomObstacle.style.height = bottomObstacleHeight + "px";
     topObstacle.style.left = "900px";
@@ -110,6 +111,8 @@ const obstaculos = {
     parObstaculos.bottomObstacle.style.left = parObstaculos.left + "px";
   },
 
+
+  //obstacle div height is 580
   colision: function (parObstaculos) {
     if (
       (bird.birdBottom < parObstaculos.bottomObstacleHeight ||
