@@ -10,18 +10,22 @@
     <!-- Agregar canvas del juego-->
 
     <div class="game-container">
-
+      
       <div class="sky">
-        <div class="bird"></div>
+        <div class="contador">
+          <img src="img/0.png" id="decenas">
+          <img src="img/0.png" id="unidades">
+        </div>
+        <div class="message"></div>
+        <div class="bird" id="fly"></div>
       </div>
 
       <div class="obstacles">
         <!-- <div id="bottomObstacle"></div>
         <div id="topObstacle"></div> -->
       </div>
-      
-      <div class="ground"></div>
+
+      <div class="ground" id="moving"></div>
     </div>
-    
   </body>
 </html>
